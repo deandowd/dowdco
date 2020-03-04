@@ -24,6 +24,8 @@ exports.createPages = ({ graphql, actions }) => {
             slug: work.slug,
           },
         })
+      })
+      result.data.allDatoCmsReview.edges.map(({ node: review }) => {
         createPage({
           path: `reviews/${review.slug}`,
           component: path.resolve(`./src/templates/review.js`),
