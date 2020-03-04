@@ -24,6 +24,13 @@ exports.createPages = ({ graphql, actions }) => {
             slug: work.slug,
           },
         })
+        createPage({
+          path: `reviews/${review.slug}`,
+          component: path.resolve(`./src/templates/review.js`),
+          context: {
+            slug: review.slug,
+          },
+        })
       })
       resolve()
     })
