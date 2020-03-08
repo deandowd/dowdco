@@ -8,25 +8,25 @@ import Layout from "../components/layout"
 export default ({ data }) => (
   <Layout>
     <article className="sheet">
-      <HelmetDatoCms seo={data.datoCmsWork.seoMetaTags} />
+      <HelmetDatoCms seo={data.datoCmsReview.seoMetaTags} />
       <div className="sheet__inner">
-        <h1 className="sheet__title">{data.datoCmsWork.title}</h1>
-        <p className="sheet__lead">{data.datoCmsWork.excerpt}</p>
+        <h1 className="sheet__title">{data.datoCmsReview.title}</h1>
+        <p className="sheet__lead">{data.datoCmsReview.excerpt}</p>
         <div className="sheet__slider">
           <Slider infinite={true} slidesToShow={2} arrows>
-            {data.datoCmsWork.gallery.map(({ fluid }) => (
-              <img alt={data.datoCmsWork.title} key={fluid.src} src={fluid.src} />
+            {data.datoCmsReview.gallery.map(({ fluid }) => (
+              <img alt={data.datoCmsReview.title} key={fluid.src} src={fluid.src} />
             ))}
           </Slider>
         </div>
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
-            __html: data.datoCmsWork.descriptionNode.childMarkdownRemark.html,
+            __html: data.datoCmsReview.descriptionNode.childMarkdownRemark.html,
           }}
         />
         <div className="sheet__gallery">
-          <Img fluid={data.datoCmsWork.coverImage.fluid} />
+          <Img fluid={data.datoCmsReview.coverImage.fluid} />
         </div>
       </div>
     </article>
