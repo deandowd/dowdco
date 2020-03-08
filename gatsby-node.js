@@ -32,12 +32,12 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       }),
-      result.data.allDatoCmsWork.edges.map(({ node: work }) => {
+      result.data.allDatoCmsReview.edges.map(({ node: work }) => {
         createPage({
-          path: `works/${work.slug}`,
-          component: path.resolve(`./src/templates/work.js`),
+          path: `reviews/${review.slug}`,
+          component: path.resolve(`./src/templates/review.js`),
           context: {
-            slug: work.slug,
+            slug: review.slug,
           },
         })
       })
