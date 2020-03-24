@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Masonry from 'react-masonry-component'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
+import review from '../templates/review'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -19,6 +20,20 @@ const IndexPage = ({ data }) => (
               </h6>
               <div className="card__description">
                 <p>{work.excerpt}</p>
+              </div>
+            </figcaption>
+          </figure>
+          <div key={review.id} className="showcase__item">
+          <figure className="card">
+            <Link to={`/reviews/${review.slug}`} className="card__image">
+              <Img fluid={review.coverImage.fluid} />
+            </Link>
+            <figcaption className="card__caption">
+              <h6 className="card__title">
+                <Link to={`/reviews/${review.slug}`}>{reviewk.title}</Link>
+              </h6>
+              <div className="card__description">
+                <p>{review.excerpt}</p>
               </div>
             </figcaption>
           </figure>
