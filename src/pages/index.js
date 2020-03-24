@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => (
             </figcaption>
           </figure>
         </div>
-      ))}
+      ))},
       {data.allDatoCmsReview.edges.map(({ node: review }) => (
         <div key={review.id} className="showcase__item">
           <figure className="card">
