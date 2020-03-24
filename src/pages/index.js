@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => (
           </figure>
         </div>
       ))},
-      {data.allDatoCmsReview.edges.map(({ node: review }) => (
+      {/* {data.allDatoCmsReview.edges.map(({ node: review }) => (
         <div key={review.id} className="showcase__item">
           <figure className="card">
             <Link to={`/reviews/${review.slug}`} className="card__image">
@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => (
             </figcaption>
           </figure>
         </div>
-      ))}
+      ))} */}
     </Masonry>
   </Layout>
 )
