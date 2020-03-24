@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import Masonry from 'react-masonry-component'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
-import review from '../templates/review'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -23,7 +22,10 @@ const IndexPage = ({ data }) => (
               </div>
             </figcaption>
           </figure>
-          <div key={review.id} className="showcase__item">
+        </div>
+      ))}
+      {data.allDatoCmsReview.edges.map(({ node: review }) => (
+        <div key={review.id} className="showcase__item">
           <figure className="card">
             <Link to={`/reviews/${review.slug}`} className="card__image">
               <Img fluid={review.coverImage.fluid} />
